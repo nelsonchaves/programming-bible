@@ -2,9 +2,9 @@
 
 ```ruby
 # Use this:
-# rails g scaffold User name
-# rails g scaffold Subject name
-# rails g model SubjectUser subject:references user:references
+# rails g scaffold Person name
+# rails g model SubjectUser species:references user:references
+# rails migration - add_column :people, :home_planet_id, :integer, to_table: { foreign_key: :planets }
 
 # Table name: people
 #
