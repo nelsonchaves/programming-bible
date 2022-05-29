@@ -58,6 +58,7 @@ $ \d
 # list, discribe a table
 $ \d <table-name>
 ```
+```ruby
 DROP TABLE items;
 
 CREATE TABLE items(
@@ -74,3 +75,4 @@ INSERT INTO items (text, is_done) VALUES ('wash dishes', false);
 INSERT INTO items (text, is_done) VALUES ('wash house', false);
 
 UPDATE users SET password_digest='$2a$10$kuM1Tuxbu5cfNkgeBAX4yupgC8dMQkQVXUhtwTsj1d9gPnJxHdF7q' WHERE id = 1;
+```
