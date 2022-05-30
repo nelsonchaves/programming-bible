@@ -53,6 +53,9 @@ User.where("created_at >= :this_month", { this_month: Date.today.beginning_of_mo
 scope :active, -> { where(active: true) }
 User.active
 
+
+# This will pull all the users older than the age provided in the argument
+
 scope :older_than, ->(age) { where("age > ?", age) }
 User.older_than(25)
 
@@ -60,3 +63,8 @@ User.older_than(25)
 # You can daisy chain the scopes like this
 
 User.older_than(25).active
+
+
+# You can also have a default scope. One that applies to all queries even if you dont specify it.
+
+default_scope { where(active: true) }
