@@ -20,6 +20,9 @@ User.where.not(name: "John")
 User.where(name: "John").or(User.where(name: "John"))
 User.where(name: "John").where(name: "Emma")
 
-
 # This is generating an AND query 
 User.where(name: "John", email: "jdoe@email.com")
+
+# You could fetch this in any order and then sort them in memory. It's more efficient to let the database do the sorting for you.
+# So we'll use this. The place holder conditions here to filter out the the most recent users who joined before this month.
+User.where("created_at >= :this_month", { this_month: Date.today.beginning_of_month }).order(created_at: :desc)
