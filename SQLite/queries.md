@@ -42,3 +42,21 @@ User.where(name: "John", email: "jdoe@email.com")
 # You could fetch this in any order and then sort them in memory. It's more efficient to let the database do the sorting for you.
 
 User.where("created_at >= :this_month", { this_month: Date.today.beginning_of_month }).order(created_at: :desc)
+```
+# Scopes
+```ruby
+# You can create scope queries with or without an argument
+
+
+# This will pull all the active users
+
+scope :active, -> { where(active: true) }
+User.active
+
+scope :older_than, ->(age) { where("age > ?", age) }
+User.older_than(25)
+
+
+# You can daisy chain the scopes like this
+
+User.older_than(25).active
