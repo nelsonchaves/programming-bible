@@ -1,16 +1,18 @@
-# Queries
+# Where Method Queries
 ```ruby
 User.where("name = 'John'") - Not advisable
 
 # You may have
-Params = { search_term: "John" }
+params = { search_term: "John" }
+# You can do this but this is a bad idea because the search term does not escape someone can insert malicious code as part of the search term and become a security risk
 User.where("name = '#{params[:search_term]}'")
-# This is also a bad idea because someone can insert malicious code and become a security risk
 
-# One to prevent this issue is using provisional handlers
+
+# One way to prevent the issue above is using "provisional handlers".
+# The question mark and the 1st argument will be replaced by the 2nd and 3rd arguments and in the proccess whatever string are in those arguments will be sanitized to prevent the security problem above which are called "sql injections"
 User.where("name = ? AND email = ?", params[:search_term], "email")
 
-# named placeholders for my .where method
+# Another option is to use "placeholder conditions" with a hash as 2nd argument.
 User.where("name = :name AND email = :email", { name: "John", email: "email" })
 
 User.where(name: "John")
