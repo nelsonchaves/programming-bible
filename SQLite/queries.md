@@ -1,4 +1,4 @@
-# Where Method Queries
+### Where Method Queries
 ```ruby
 User.where("name = 'John'") - Not advisable
 
@@ -34,8 +34,11 @@ User.where(name: "John").where(name: "Emma")
 # This is generating an AND query 
 
 User.where(name: "John", email: "jdoe@email.com")
+```
 
-
-# This is the place holder conditions here to filter out the the most recent users who joined before this month. You could fetch this in any order and then sort them in memory. It's more efficient to let the database do the sorting for you.
+# Ordering Queries
+```ruby
+# This is the place holder conditions here to filter out the the most recent users who joined before this month.
+# You could fetch this in any order and then sort them in memory. It's more efficient to let the database do the sorting for you.
 
 User.where("created_at >= :this_month", { this_month: Date.today.beginning_of_month }).order(created_at: :desc)
