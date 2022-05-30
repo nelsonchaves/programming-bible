@@ -1,4 +1,4 @@
-### Where Method Queries
+# Where Method Queries
 ```ruby
 User.where("name = 'John'") - Not advisable
 
