@@ -73,8 +73,9 @@ default_scope { where(active: true) }
 # This will pull all the users older than the age provided in the argument and the users created within the current year
 
 scope :younger_than, ->(age) { where("age < ?", age).where("created_at > :this_year", { this_year: Date.today.beginning_of_year }) }
-
+User.younger_than(25)
 
 # This will pull all the users between the ages provided ex: between 20-45 age. And also all users that are happy
 
 scope :min_max_happy, ->(min, max) { where("age >= ? AND age <= ?", min, max).where(happy: true) }
+User.min_max_happy(20, 45)
