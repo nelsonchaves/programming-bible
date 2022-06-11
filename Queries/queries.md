@@ -25,7 +25,6 @@ User.where(name: "John").where(name: "Emma")
 # This is generating an AND query 
 User.where(name: "John", email: "jdoe@email.com")
 ```
-
 # Ordering Queries
 ```ruby
 # This is the place holder conditions here to filter out the the most recent users who joined before this month.
