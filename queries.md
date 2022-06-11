@@ -99,6 +99,7 @@ User.all.each { |u| u.foods.map(&:name)}
 
 # Preload - You always get 2 separate SQL queries. The first one will fetch the parent records and the 2nd one the associated records.
 User.preload(:foods)
+
 # but because of 2 separate queries you cannot filter based on the associated records. and if you try to add a where clause you'll get an error
 User.preload(:foods).where(foods: { name: "Peppers" })
 
@@ -114,8 +115,7 @@ User.includes(:foods).where(foods: { name: "Peppers" })
 ```
 # Grouping
 ```ruby
-# allows you to group records by 1 or more attributes. it does it by generating a group_by SQL query. You might want to see how many users are in a databsae for each country
-by chaining the count at the end you receive hash back
+# allows you to group records by 1 or more attributes. it does it by generating a group_by SQL query. You might want to see how many users are in a database for each country by chaining the count at the end you receive hash back
 User.all.group(:country).count
 >> "Sweden"=>4
 
