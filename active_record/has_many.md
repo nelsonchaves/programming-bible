@@ -34,27 +34,17 @@ end
 
 # User Form
 ```ruby
-<h1>New user</h1>
+= form_with model: @user do |f|
+  = f.label :name
+  = f.text_field :name
 
-<%= form_with model: @user do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-  <div>
-    <%= form.collection_check_boxes(:food_ids, Food.all, :id, :name) %>
-  </div>
-  <div>
-    <%= form.fields_for :notes, Note.new do |notes_form| %>
-      <%= notes_form.text_area :body %>
-    <% end %>
-  </div>
-  <div>
-    <%= form.submit "Save" %>
-  </div>
-<% end %>
+  = f.label :email
+  = f.email_field :email
+
+  = f.collection_check_boxes(:food_ids, Food.all, :id, :name)
+
+  = f.fields_for :notes, Note.new do |notes_form|
+  = notes_form.text_area :body
+
+  = form.submit "Save"
 ```
