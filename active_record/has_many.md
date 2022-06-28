@@ -28,8 +28,7 @@ end
 # User Controller
 ```ruby
 def user_params
-  params.require(:user).permit(:name, :email, food_ids: [],
-notes_attributes: [:body])
+  params.require(:user).permit(:name, :email, food_ids: [], notes_attributes: [:body])
 end
 ```
 
