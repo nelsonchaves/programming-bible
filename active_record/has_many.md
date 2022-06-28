@@ -17,7 +17,12 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :notes
 end
 ```
-
+# Food Model
+```ruby
+class Food < ApplicationRecord
+  has_and_belongs_to_many :users
+end
+```
 # Note Model
 ```ruby
 class Note < ApplicationRecord
@@ -46,5 +51,5 @@ end
   = f.fields_for :notes, Note.new do |notes_form|
   = notes_form.text_area :body
 
-  = form.submit "Save"
+  = f.submit "Save"
 ```
