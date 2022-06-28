@@ -1,5 +1,9 @@
-  def age(user)
-    time_ago_in_words(user.bday)
-  end
-  
-  = age(User.first)
+# Birth date Helper
+
+```ruby
+def age(user)
+  time_ago_in_words(user.bday)
+end
+
+= age(User.first)
+```
