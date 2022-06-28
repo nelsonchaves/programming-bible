@@ -17,12 +17,14 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :notes
 end
 ```
+
 # Food Model
 ```ruby
 class Food < ApplicationRecord
   has_and_belongs_to_many :users
 end
 ```
+
 # Note Model
 ```ruby
 class Note < ApplicationRecord
@@ -46,6 +48,8 @@ end
   = f.label :email
   = f.email_field :email
 
+  = f.collection_select :food_id, Food.all, :id, :name
+  or
   = f.collection_check_boxes(:food_ids, Food.all, :id, :name)
 
   = f.fields_for :notes, Note.new do |notes_form|
