@@ -71,6 +71,11 @@ User.where( foods: { name: "Peppers" }, nutrients: { name: 'X' }).joins(foods: :
 ```
 # Eager Loading
 ```ruby
+What is eagerloading?
+- One way to improve performance is to reduce the number of database queries through eager loading.
+- You can know where we need eager loading through “Bullet’ Gem
+
+
 User.all.each { |u| u.foods.map(&:name)}
 # In Rails there are 3 rails you can do this. [preload, eager_loading, includes]
 

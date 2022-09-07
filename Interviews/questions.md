@@ -3,6 +3,17 @@
 ORM tends for Object-Relationship-Model, it means that your Classes are mapped to table in the database, and Objects are directly mapped to the rows in the table.
 ```
 
+- What is Active Record?
+```ruby
+Active Record are like Object Relational Mapping(ORM), where classes are mapped to table and objects are mapped to colums in the table
+```
+
+- What is bundler?
+```ruby
+- Bundler helps to you manage your gems for the application.
+- After specifying gems in your Gemfile, you need to do a bundle install. If the gem is available in the system, bundle will use that else it will pick up from the rubygems.org.
+```
+
 - What is Ruby Gems?
 ```ruby
 Ruby Gem is a software package, commonly called a “gem”. Gem contains a packaged Ruby application or library. The Ruby Gems software itself allows you to easily download, install and manipulate gems on your system.
@@ -33,8 +44,56 @@ What is the difference between lambada and proc
 proc and Lambda are used to create code blocks. After creating them, we can pass them around our code, just like variables.
 ```
 
+What is asset pipeline
+```ruby
+asset pipeline which enables proper organization of CSS and JavaScript
+```
+
+Difference between render and redirect?
+```ruby
+- Redirect is a method that is used to issue the error message in case the page is not found or it issues a 302 to the browser. Whereas, render is a method used to create the content.
+
+- Redirect is used to tell the browser to issue a new request. Whereas, render only works in case the controller is being set up properly with the variables that needs to be rendered.
+
+- Redirect is used when the user needs to redirect its response to some other page or URL. Whereas, render method renders a page and generate a code of 200.
+
+- Redirect is used as:
+redirect_to: controller => 'users', :action => 'new'
+
+- Render is used as:
+render: partial
+render: new -> this will call the template named as new.html without the need of redirecting it to the new action.
+```
+
+What are helpers and how to use helpers in ROR?
+```ruby
+- Helpers (“view helpers”) are modules that provide methods which are automatically usable in your view. They provide shortcuts to commonly used display code and a way for you to keep the programming out of your views.
+- The purpose of a helper is to simplify the view.
+- It’s best if the view file (HTML/XML) is short and sweet, so you can see the structure of the output.
+```
 
 
+- What is the difference between symbol and string?
+```ruby
+- Symbols have two nice properties compared to strings which can save you memory and CPU time.
+- The difference remains in the object_id, memory and process time for both of them when used together at one time.
+- Strings are considered as mutable objects. Whereas, symbols, belongs to the category of immutable
+- Strings objects are mutable so that it takes only the assignments to change the object information. Whereas, information of, immutable objects gets overwritten
+```
+
+- Ruby Supports Single Inheritence/Multiple Inheritence or Both?
+```ruby
+A. Ruby Supports only Single Inheritnece
+```
+
+- Difference between puts and print
+```ruby
+"puts" adds a newline to the end of the output. "print" does not.
+```
+- What is TDD and BDD?
+```ruby
+Test-Driven-Development and Behavior-Driven-Development
+```
 
 What is a class?
 What is the difference between a class and a module?
