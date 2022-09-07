@@ -3,16 +3,16 @@
 - Model names are singular.
 - The Movie model automatically maps to the movies table.
 
-- What things we can define in the model?
+What things we can define in the model?
 ```ruby
-1. Validations (like validates_presence_of, numeracility_of, format_of etc.)
-2. Relationships(like has_one, has_many, HABTM etc.)
-3. Callbacks(like before_save, after_save, before_create etc.)
-4. Suppose you installed a plugin say validation_group, So you can also define validation_group settings in your model
-5. ROR Queries in Sql
+* Validations (like validates_presence_of, numeracility_of, format_of etc.)
+* Relationships(like has_one, has_many, HABTM etc.)
+* Callbacks(like before_save, after_save, before_create etc.)
+* Suppose you installed a plugin say validation_group, So you can also define validation_group settings in your model
+* ROR Queries in Sql
 ```
 
-- How many Types of Relationships does a Model has?
+How many Types of Relationships does a Model has?
 ```ruby
 * has_one
 * belongs_to
