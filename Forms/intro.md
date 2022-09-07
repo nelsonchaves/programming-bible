@@ -29,3 +29,14 @@ returns a textarea tag set for accessing the specified attribute
 ```ruby
 <%= f.text_area :description, cols: 40, rows: 7 %>
 ```
+
+```ruby
+= f.collection_select :food_id, Food.all, :id, :name
+or
+= f.collection_check_boxes(:food_ids, Food.all, :id, :name)
+```
+
+```ruby
+= f.fields_for :notes, Note.new do |notes_form|
+= notes_form.text_area :body
+```
