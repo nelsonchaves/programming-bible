@@ -28,26 +28,7 @@ What is restful in rails
 Stands for REpresentational State Transfer
 ```
 
-- What is the difference between form_for and form_tag?
-```ruby
-- form_tag and form_for both are used to submit the form and it’s elements.
-- The main difference between these two is the way of managing objects related to that particular model is different.
-```
-form_for
-——-
-We should use “form_for” tag for a specific model
-It performs the “standard http post” which is having fields related to active record (model) objects
 
-form_tag:
-—–
-It creates a form as a normal form. form_tag also performs the “standard http post” without any model backed and has normal fields. This is mainly used when specific data need to be submitted via form.
-It just creates a form tag and it is best used for non-model forms.
-
-Example:
-
-<% form_tag ‘/articles’ do -%>
-<%= text_field_tag “article”, “firstname” %>
-<% end -%>
 
 
 
