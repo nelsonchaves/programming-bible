@@ -12,3 +12,9 @@ class Registration < ApplicationRecord
   belongs_to :event
 end
 ```
+
+event.registrations
+Returns an array of Registration objects that are associated with the event: all the registrations that have an event_id matching the event’s ID.
+
+registration.event
+Returns the Event object associated with the registration: the event that matches the ID in the event_id column. 
