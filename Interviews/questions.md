@@ -95,6 +95,25 @@ A. Ruby Supports only Single Inheritnece
 Test-Driven-Development and Behavior-Driven-Development
 ```
 
+- How do you sort an Array of objects by a particular attribute? What is a better way to do sorting with ActiveRecord?
+```ruby
+users = users.sort_by &:lastname
+users.sort_by! {|u| u.lastname}
+```
+
+- Walk through the flow of a request through Rails.
+```ruby
+* Web Browser - The browser makes the request, usually on behalf of the user when they click on a link.
+* Web Server - The web server takes the request and sends it to the Rails application.
+* Router - The router, the first part of the Rails application that sees the request, parses the request and determines which controller/action pair it should call.
+* Controller - The controller is called. The controller's job is to retrieve data using the model and send it to a view.
+* Model - If any data needs to be retrieved, the model is used to get data from the database.
+* View - The data is sent to a view, where HTML output is generated.
+* Web Server - The generated HTML is sent back to the server, Rails is now finished with the request.
+* Web Browser - The server sends the data back to the web browser, and the results are displayed.
+```
+
+
 What is a class?
 What is the difference between a class and a module?
 What is an object?
