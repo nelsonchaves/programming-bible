@@ -5,9 +5,9 @@
 
 What things we can define in the model?
 ```ruby
-* Validations (like validates_presence_of, numeracility_of, format_of etc.)
-* Relationships(like has_one, has_many, HABTM etc.)
-* Callbacks(like before_save, after_save, before_create etc.)
+* Validations - like validates_presence_of, validates_numericality_of, format_of etc.
+* Relationships - like has_one, has_many, HABTM etc.
+* Callbacks - like before_save, after_save, before_create etc.
 * Suppose you installed a plugin say validation_group, So you can also define validation_group settings in your model
 * ROR Queries in Sql
 ```
