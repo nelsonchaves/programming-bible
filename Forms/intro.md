@@ -23,6 +23,8 @@ generates a form for a nested resource
 ```
 
 # Form Examples
+
+generates a form for a nested resource
 ```ruby
 <%= form_for([@event, @registration]) do |f| %>
 ```
