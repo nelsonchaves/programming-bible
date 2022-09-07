@@ -15,9 +15,9 @@ returns a select tag and a series of contained option tags for the specified att
 <%= f.select :how_heard, ["Blog", "Newsletter"] %>
 ```
 
+returns a set of select tags pre-selected for accessing the specified datetime-based attribute
 ```ruby
 <%= f.datetime_select :starts_at %>
-returns a set of select tags pre-selected for accessing the specified datetime-based attribute
 ```
 
 returns an input tag of type “number” for accessing the specified attribute
