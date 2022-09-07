@@ -28,7 +28,10 @@ What is restful in rails
 Stands for REpresentational State Transfer
 ```
 
-
+What is the difference between lambada and proc
+```ruby
+proc and Lambda are used to create code blocks. After creating them, we can pass them around our code, just like variables.
+```
 
 
 
