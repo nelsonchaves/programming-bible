@@ -3,16 +3,54 @@
 ORM tends for Object-Relationship-Model, it means that your Classes are mapped to table in the database, and Objects are directly mapped to the rows in the table.
 ```
 
-What is Ruby Gems?
+- What is Ruby Gems?
 ```ruby
 Ruby Gem is a software package, commonly called a “gem”. Gem contains a packaged Ruby application or library. The Ruby Gems software itself allows you to easily download, install and manipulate gems on your system.
 ```
 
-What is Gemfile and Gemfile.lock?
+- What is Gemfile and Gemfile.lock?
 ```ruby
 - The Gemfile is where you specify which gems you want to use, and lets you specify which versions.
 - The Gemfile.lock file is where Bundler records the exact versions that were installed. This way, when the same library/project is loaded on another machine, running bundle install will look at the Gemfile.lock and install the exact same versions, rather than just using the Gemfile and installing the most recent versions.
 ```
+
+- What is the difference between a plugin and a gem?
+```ruby
+- A gem is just ruby code. It is installed on a machine and it’s available for all ruby applications running on that machine.
+- Rails, rake, json, rspec — are all examples of gems.
+- Plugin is also ruby code but it is installed in the application folder and only available for that specific application.
+Sitemap-generator, etc.
+- In general, since Rails works well with gems you will find that you would be mostly integrating with gem files and not plugins in general. Most developers release their libraries as gems.
+```
+
+What is restful in rails
+```ruby
+Stands for REpresentational State Transfer
+```
+
+- What is the difference between form_for and form_tag?
+```ruby
+- form_tag and form_for both are used to submit the form and it’s elements.
+- The main difference between these two is the way of managing objects related to that particular model is different.
+```
+form_for
+——-
+We should use “form_for” tag for a specific model
+It performs the “standard http post” which is having fields related to active record (model) objects
+
+form_tag:
+—–
+It creates a form as a normal form. form_tag also performs the “standard http post” without any model backed and has normal fields. This is mainly used when specific data need to be submitted via form.
+It just creates a form tag and it is best used for non-model forms.
+
+Example:
+
+<% form_tag ‘/articles’ do -%>
+<%= text_field_tag “article”, “firstname” %>
+<% end -%>
+
+
+
 
 What is a class?
 What is the difference between a class and a module?
