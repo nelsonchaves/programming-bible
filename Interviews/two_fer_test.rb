@@ -9,8 +9,8 @@ class TwoFer
   end
 end
 
-
 p TwoFer.two_fer()
+
 
 # ///////// Different Way of doing it also
 
