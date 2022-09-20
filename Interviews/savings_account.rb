@@ -34,7 +34,7 @@ module SavingsAccount
   end
 end
 
-p SavingsAccount.interest_rate(-200.75)
+p SavingsAccount.interest_rate(200.75)
 p SavingsAccount.annual_balance_update(200.75)
 p SavingsAccount.years_before_desired_balance(200.75, 220.88)
 
