@@ -18,7 +18,7 @@ class Moviegoer
 
   # Popcorn is 🍿
   def claim_free_popcorn!
-    @member == true ? "🍿" : raise(NotMovieClubMemberError.new)
+    @member ? "🍿" : raise(NotMovieClubMemberError, "Exception was raised!")
   end
 end
 
