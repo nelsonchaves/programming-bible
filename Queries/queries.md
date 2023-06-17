@@ -1,15 +1,3 @@
-# Joins Queries
-```ruby
-# The Joins method use lazy loading
-# Here we can filter out the User based on food name "lettuce"
-User.where( foods: { name: "Lettuce" }).joins(:foods)
-
-# Here we can filter our the users on both the colors and the food by adding a second argument in the in joins
-User.where( foods: { name: "Peppers" }, colors: { name: 'black' }).joins(:foods, :colors)
-
-# Here you can use Nested joins where the User has many :foods and the foods has_many :nutrients. the difference between the nested and the non-nested version of the join query is that the non-nested has an array as the argument to the joins method. And the nested one has a hash argument instead
-User.where( foods: { name: "Peppers" }, nutrients: { name: 'X' }).joins(foods: :nutrients)
-```
 # Eager Loading
 ```ruby
 What is eagerloading?
