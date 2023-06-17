@@ -42,39 +42,45 @@ class PersonFilm < ApplicationRecord
 end
 ```
 
-# Table name: films
-#
-#  id         :bigint           not null, primary key
-#  title      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
+| Table: | films |  |
+|:-----|:--------|------:|
+| id             | :bigint        | not null, primary key |
+| title          | :string        | |
+| created_at     | :datetime      |       not null
+| updated_at     | :datetime      |       not null
+
+```ruby
 class Film < ApplicationRecord
   has_many :person_films
   has_many :people, through: :person_films
 end
+```
 
-# Table name: planets
-#
-#  id         :bigint           not null, primary key
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  senator_id :integer
-#
+| Table: | planets |  |
+|:-----|:--------|------:|
+| id             | :bigint        | not null, primary key |
+| name       | :string|
+| created_at | :datetime  |        not null
+| updated_at | :datetime   |       not null
+| senator_id | :integer|
+
+```ruby
 class Planet < ApplicationRecord
   # senator doesnt exist in a class so we pass the class_name for where senator is in
   belong_to :senator, class_name: 'Person'
   has_many :citizens, class_name: 'Person', foreign_key: :home_planet_id
 end
+```
 
-# Table name: species
-#
-#  id         :bigint           not null, primary key
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
+| Table: | species |  |
+|:-----|:--------|------:|
+| id             | :bigint        | not null, primary key |
+| name       | :string|
+| created_at | :datetime    |      not null
+| updated_at | :datetime    |      not null
+
+```ruby
 class Species < ApplicationRecord
   has_many :people
 end
+```
