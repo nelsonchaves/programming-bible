@@ -5,7 +5,7 @@ rails g scaffold Person name
 rails g model SubjectUser species:references user:references
 rails migration - add_column :people, :home_planet_id, :integer, to_table: { foreign_key: :planets }
 ```
-| Table name: people |
+| Left |  Center  | Right |
 |:-----|:--------:|------:|
 | id   | :bigint  | not null, primary key |
 | name   |  :string  |   |
