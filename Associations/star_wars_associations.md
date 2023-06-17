@@ -10,6 +10,20 @@ rails migration - add_column :people, :home_planet_id, :integer, to_table: { for
 | L0   | **bold** | $1600 |
 | L1   |  `code`  |   $12 |
 | L2   | _italic_ |    $1 |
+/* Table
+ */
+.markdown-body .rdmd-table table {}
+
+/* Rows
+ */
+.markdown-body .rdmd-table tr {}
+.markdown-body .rdmd-table thead tr {} /* header row's background */
+.markdown-body .rdmd-table tr:nth-child(2n) {} /* striped rows' background */
+
+/* Cells
+ */
+.markdown-body .rdmd-table th {}
+.markdown-body .rdmd-table td {}
 # Table name: people
 #
 #  id             :bigint           not null, primary key
