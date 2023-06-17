@@ -16,7 +16,7 @@ Provides the
 - DB > OOP - It allows us to work with the database in a object oriented way through these objects called models.
 - The ApplicationRecord inherets from the ActiveRecord base class. we get all the behavior is provides
 
-What things we can define in the model?
+##### What things we can define in the model?
 * Validations - like validates_presence_of, validates_numericality_of, format_of etc.
 * Relationships - like has_one, has_many, HABTM etc.
 * Callbacks - like before_save, after_save, before_create etc.
