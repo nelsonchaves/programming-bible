@@ -19,7 +19,7 @@ For this code snippet to work, you need to have the faker gem in your Gemfile.
 end
 ```
 
-And if you want to generate a few color records for each user, you can do it with the following code snippet.
+And if you want to generate a few food records for each user, you can do it with the following code snippet.
 ```ruby
 User.all.each do |user|
   Food.create(name: Faker::Food.vegetables, user: user)
@@ -27,31 +27,50 @@ end
 ```
 
 To retrieve the data using the joins method:
-
+```ruby
 User.where(foods: { name: 'Lettuce' }).joins(:foods)
-Generate the Color model:
+```
 
+Generate the Color model:
+```ruby
 rails g model Color name user:references
 rails db:migrate
+```
+
 Create three colors for each user:
-
+```ruby
 User.all.each { |u| 3.times { Color.create(name: Faker::Color.color_name, user: u) } }
-Adding colors to the query:
+```
 
+Adding colors to the query:
+```ruby
 User.where(foods: { name: 'Lettuce' }, colors: { name: 'red' }).joins(:foods)
 User.where(foods: { name: 'Lettuce' }, colors: { name: 'red' }).joins(:foods, :colors)
+```
+
 Add the Nutrient model:
-
+```ruby
 rails g model Nutrient name food:references
-And set up the model:
+```
 
+And set up the model:
+```ruby
 class Food < ApplicationRecord
   belongs_to :user
   has_many :nutrients
 end
+```
 So you can use the nested join to fetch based on foods and their nutrients:
-
+```ruby
 User.where(foods: { name: 'Lettuce' }, nutrients: { name: "X" }).joins(foods: :nutrients)
+```
+
+
+
+
+
+
+
 
 ```ruby
 # The Joins method use lazy loading
