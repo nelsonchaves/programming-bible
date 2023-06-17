@@ -23,7 +23,7 @@
 - ROR Queries in Sql
 
 
-How many Types of Relationships does a Model have?
+### How many Types of Relationships does a Model have?
 
 - has_one
 - belongs_to
