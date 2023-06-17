@@ -10,16 +10,16 @@
 # Active Record
 ### The Framework
 Provides the
-- mapping
-- association - between the models to represent table relationships
-- validation - of the data before it gets persisted to the database
-- DB > OOP - It allows us to work with the database in a object oriented way through these objects called models.
-- The ApplicationRecord inherets from the ActiveRecord base class. we get all the behavior is provides
+- **mapping**
+- **association** - between the models to represent table relationships
+- **validation** - of the data before it gets persisted to the database
+- **DB > OOP** - It allows us to work with the database in a object oriented way through these objects called models.
+- The ApplicationRecord inherits from the ActiveRecord base class. we get all the behavior it provides
 
 ##### What things we can define in the model?
-- **bold** Validations - like validates_presence_of, validates_numericality_of, format_of etc.
-- Relationships - like has_one, has_many, HABTM etc.
-- Callbacks - like before_save, after_save, before_create etc.
+- **Validations** - like validates_presence_of, validates_numericality_of, format_of etc.
+- **Relationships** - like has_one, has_many, HABTM etc.
+- **Callbacks** - like before_save, after_save, before_create etc.
 - Suppose you installed a plugin say validation_group, So you can also define validation_group settings in your model
 - ROR Queries in Sql
 
