@@ -10,7 +10,8 @@
 - Has-Many-Through
 - Polymorphic
 
-# One-to-One relationship / Has-One/Belong-to
+# Has-One / Belong-to
+### One-to-One relationship 
 ![The San Juan Mountains are beautiful!](/Images/associations_1.png)
 # One-to-Many relationship / Has-Many
 ![The San Juan Mountains are beautiful!](/Images/associations_2.png)
