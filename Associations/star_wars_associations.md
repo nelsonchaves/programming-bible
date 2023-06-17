@@ -1,11 +1,15 @@
 # Star Wars Associations
 
 ```ruby
-# Use this:
-# rails g scaffold Person name
-# rails g model SubjectUser species:references user:references
-# rails migration - add_column :people, :home_planet_id, :integer, to_table: { foreign_key: :planets }
+rails g scaffold Person name
+rails g model SubjectUser species:references user:references
+rails migration - add_column :people, :home_planet_id, :integer, to_table: { foreign_key: :planets }
 
+| Left |  Center  | Right |
+|:-----|:--------:|------:|
+| L0   | **bold** | $1600 |
+| L1   |  `code`  |   $12 |
+| L2   | _italic_ |    $1 |
 # Table name: people
 #
 #  id             :bigint           not null, primary key
