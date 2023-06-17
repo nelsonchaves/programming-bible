@@ -25,7 +25,8 @@ User.all.each do |user|
   Food.create(name: Faker::Food.vegetables, user: user)
 end
 ```
-
+The Joins method use lazy loading
+Here we can filter out the User based on food name "lettuce"
 To retrieve the data using the joins method:
 ```ruby
 User.where(foods: { name: 'Lettuce' }).joins(:foods)
@@ -42,6 +43,7 @@ Create three colors for each user:
 User.all.each { |u| 3.times { Color.create(name: Faker::Color.color_name, user: u) } }
 ```
 
+Here we can filter our the users on both the colors and the food by adding a second argument in the in joins
 Adding colors to the query:
 ```ruby
 User.where(foods: { name: 'Lettuce' }, colors: { name: 'red' }).joins(:foods)
@@ -60,26 +62,9 @@ class Food < ApplicationRecord
   has_many :nutrients
 end
 ```
+
+Here you can use Nested joins where the User has many :foods and the foods has_many :nutrients. the difference between the nested and the non-nested version of the join query is that the non-nested has an array as the argument to the joins method. And the nested one has a hash argument instead
 So you can use the nested join to fetch based on foods and their nutrients:
 ```ruby
 User.where(foods: { name: 'Lettuce' }, nutrients: { name: "X" }).joins(foods: :nutrients)
-```
-
-
-
-
-
-
-
-
-```ruby
-# The Joins method use lazy loading
-# Here we can filter out the User based on food name "lettuce"
-User.where( foods: { name: "Lettuce" }).joins(:foods)
-
-# Here we can filter our the users on both the colors and the food by adding a second argument in the in joins
-User.where( foods: { name: "Peppers" }, colors: { name: 'black' }).joins(:foods, :colors)
-
-# Here you can use Nested joins where the User has many :foods and the foods has_many :nutrients. the difference between the nested and the non-nested version of the join query is that the non-nested has an array as the argument to the joins method. And the nested one has a hash argument instead
-User.where( foods: { name: "Peppers" }, nutrients: { name: 'X' }).joins(foods: :nutrients)
 ```
