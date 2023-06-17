@@ -1,11 +1,7 @@
 # Star Wars Associations
 
-```ruby
-rails g scaffold Person name
-rails g model SubjectUser species:references user:references
-rails migration - add_column :people, :home_planet_id, :integer, to_table: { foreign_key: :planets }
-```
-| Person Table Header |    |  |
+
+| Person Table |    |  |
 |:-----|:--------|------:|
 | id             | :bigint      | not null, primary key |
 | name           | :string      | |
@@ -14,6 +10,11 @@ rails migration - add_column :people, :home_planet_id, :integer, to_table: { for
 | updated_at     | :datetime    | not null |
 | home_planet_id | :integer     | |
 
+```ruby
+rails g scaffold Person name
+rails g model SubjectUser species:references user:references
+rails migration - add_column :people, :home_planet_id, :integer, to_table: { foreign_key: :planets }
+```
 ```ruby
 class Person < ApplicationRecord
   belong_to :species
