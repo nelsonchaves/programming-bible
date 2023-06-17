@@ -1,4 +1,4 @@
-# Where method
+# Where method queries
 It's important to know how to laser focus your queries so you don't end up retrieving more data than you have to.
 This is "where" method comes in handy. probably the most used query of them all
 
@@ -33,7 +33,7 @@ User.where.not(name: params[:search_term]) # negating the query
 User.where(name: "John").or(User.where(name: "Emma")) # OR
 User.where(name: "John").where(age: 25) # combining conditions
 ```
-```ruby
 This is generating an AND query
+```ruby
 User.where(name: "John", email: "jdoe@email.com")
 ```
