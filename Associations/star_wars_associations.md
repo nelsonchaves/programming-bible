@@ -5,7 +5,7 @@ rails g scaffold Person name
 rails g model SubjectUser species:references user:references
 rails migration - add_column :people, :home_planet_id, :integer, to_table: { foreign_key: :planets }
 ```
-| Left |  Center  | Right |
+| Person Table |    |  |
 |:-----|:--------:|------:|
 | id             | :bigint      | not null, primary key |
 | name           | :string      | |
@@ -14,6 +14,7 @@ rails migration - add_column :people, :home_planet_id, :integer, to_table: { for
 | updated_at     | :datetime    | not null |
 | home_planet_id | :integer     | |
 
+```ruby
 class Person < ApplicationRecord
   belong_to :species
   # home_planet doesnt exist in a class so we pass the class_name for where home_planet is in
@@ -23,7 +24,7 @@ class Person < ApplicationRecord
   has_one :senator, through: :home_planet
   has_many :citizens, through: :home_planet
 end
-
+```
 # Table name: person_films
 #
 #  id         :bigint           not null, primary key
