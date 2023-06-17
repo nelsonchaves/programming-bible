@@ -1,7 +1,7 @@
 # Star Wars Associations
 
 
-| Person Table |    |  |
+| Table: | person |  |
 |:-----|:--------|------:|
 | id             | :bigint      | not null, primary key |
 | name           | :string      | |
@@ -26,18 +26,21 @@ class Person < ApplicationRecord
   has_many :citizens, through: :home_planet
 end
 ```
-# Table name: person_films
-#
-#  id         :bigint           not null, primary key
-#  person_id  :bigint           not null
-#  film_id    :bigint           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
+
+| Table: | person_films |  |
+|:-----|:--------|------:|
+| id             | :bigint        | not null, primary key |
+| person_id      | :bigint        | not null
+| film_id        | :bigint        | not null
+| created_at     | :datetime      | not null
+| updated_at     | :datetime      | not null
+
+```ruby
 class PersonFilm < ApplicationRecord
   belong_to :person
   belong_to :film
 end
+```
 
 # Table name: films
 #
