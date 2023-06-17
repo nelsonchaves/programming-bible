@@ -7,9 +7,8 @@
 - Model names are singular.
 - The Movie model automatically maps to the movies table.
 
-# Active Record
-### The Framework
-Provides the
+# Active Record - Framework
+### It provides
 - **mapping**
 - **association** - between the models to represent table relationships
 - **validation** - of the data before it gets persisted to the database
@@ -24,7 +23,7 @@ Provides the
 - ROR Queries in Sql
 
 
-How many Types of Relationships does a Model has?
+How many Types of Relationships does a Model have?
 
 - has_one
 - belongs_to
