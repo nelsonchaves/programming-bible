@@ -1,12 +1,12 @@
-PK = Primary Key
+### PK = Primary Key
 
-Key Characteristics:
+#### Key Characteristics:
 - Separates the rows from one another
 - Doesn't change
 - Not empty
 - Guaranteed uniqueness
 
-FK = ForeignKey
+### FK = ForeignKey
 The emails table will use that primary key to point to a specific row in the users table. The user_id column in the image is called a foreign key because it's a reference to a primary key.
 
 # One-to-One relationship
