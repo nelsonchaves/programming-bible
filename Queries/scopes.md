@@ -1,13 +1,13 @@
 # Scopes
 You can create scope queries with or without an argument
 
-This will pull all the active users
+#### This will pull all the active users
 ```ruby
 scope :active, -> { where(active: true) }
 User.active
 ```
 
-This will pull all the users older than the age provided in the argument
+##### This will pull all the users older than the age provided in the argument
 ```ruby
 scope :older_than, ->(age) { where("age > ?", age) }
 User.older_than(25)
