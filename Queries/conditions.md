@@ -9,8 +9,9 @@ This is a bad idea because the :search_term does not escape. Someone could inser
 
 ```ruby
 User.where("name = '#{params[:search_term]}'")
+User.where("name = 'John'")
 ```
-
+.callout_warn
 ### Search users by their names and emails (via positional handlers).
 ```ruby
 User.where("name = ? AND email = ?", params[:search_term], params[:search_email])
