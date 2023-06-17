@@ -1,30 +1,15 @@
 # Star Wars Associations
-| Left |  Center  | Right |
-|:-----|:--------:|------:|
-| L0   | **bold** | $1600 |
-| L1   |  `code`  |   $12 |
-| L2   | _italic_ |    $1 |
-/* Table
- */
-.markdown-body .rdmd-table table {}
-
-/* Rows
- */
-.markdown-body .rdmd-table tr {}
-.markdown-body .rdmd-table thead tr {} /* header row's background */
-.markdown-body .rdmd-table tr:nth-child(2n) {} /* striped rows' background */
-
-/* Cells
- */
-.markdown-body .rdmd-table th {}
-.markdown-body .rdmd-table td {}
 
 ```ruby
 rails g scaffold Person name
 rails g model SubjectUser species:references user:references
 rails migration - add_column :people, :home_planet_id, :integer, to_table: { foreign_key: :planets }
-
-
+```
+| Table name: people |
+|:-----|:--------:|------:|
+| id   | :bigint  | not null, primary key |
+| name   |  :string  |   |
+| species_id   | :bigint |    not null |
 # Table name: people
 #
 #  id             :bigint           not null, primary key
