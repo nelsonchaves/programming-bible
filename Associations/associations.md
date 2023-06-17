@@ -1,9 +1,3 @@
-## ATX Headings are Valid ##
-Heading One
-===========
-
-Heading Two
----
 # Database Relationships
 - One-to-One
 - One-to-Many
