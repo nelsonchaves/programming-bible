@@ -1,3 +1,4 @@
-Normalization or DB Design
-(/Images/associations_4.png)
-(/Images/associations_5.png)
+# Normalization or DB Design
+
+![One-to-One relationship](/Images/associations_4.png)
+![One-to-One relationship](/Images/associations_5.png)
