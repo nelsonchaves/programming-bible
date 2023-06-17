@@ -10,8 +10,8 @@ FK = ForeignKey
 The emails table will use that primary key to point to a specific row in the users table. The user_id column in the image is called a foreign key because it's a reference to a primary key.
 
 # One-to-One relationship
-![The San Juan Mountains are beautiful!](/Images/associations_1.png)
+[The San Juan Mountains are beautiful!](/Images/associations_1.png)
 # One-to-Many relationship
-(/Images/associations_2.png "asdfsadf")
+[The San Juan Mountains are beautiful!](/Images/associations_2.png)
 # Many-to-Many relationship
-(/Images/associations_3.png)
+[The San Juan Mountains are beautiful!](/Images/associations_3.png)
