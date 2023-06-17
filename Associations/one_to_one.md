@@ -6,4 +6,4 @@ Key Characteristics:
 
 FK = ForeignKey
 
-![The San Juan Mountains are beautiful!](/images/associations.png "San Juan Mountains")
+![The San Juan Mountains are beautiful!](/Images/associations.png "San Juan Mountains")
