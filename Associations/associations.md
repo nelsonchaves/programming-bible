@@ -12,11 +12,11 @@
 
 # Has-One / Belong-to
 ### One-to-One relationship
-![The San Juan Mountains are beautiful!](/Images/associations_1.png)
+![One-to-One relationship](/Images/associations_1.png)
 # One-to-Many relationship / Has-Many
-![The San Juan Mountains are beautiful!](/Images/associations_2.png)
+![One-to-Many relationship / Has-Many](/Images/associations_2.png)
 # Many-to-Many relationship / Has-and-Belongs-to-Many
-![The San Juan Mountains are beautiful!](/Images/associations_3.png)
+![Many-to-Many relationship](/Images/associations_3.png)
 ```ruby
 rails generate model Color name --no-test-framework
 rails generate migration create_table_users_colors

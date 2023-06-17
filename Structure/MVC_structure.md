@@ -22,4 +22,4 @@
 - The controller gets the data from the model
 - the controller passes the data to the view by assigning to an instance variable
 
-structure_1
+![structure](/Images/structure_1.png)
