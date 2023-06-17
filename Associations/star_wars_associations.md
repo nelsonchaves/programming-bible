@@ -46,8 +46,8 @@ end
 |:-----|:--------|------:|
 | id             | :bigint        | not null, primary key |
 | title          | :string        | |
-| created_at     | :datetime      |       not null
-| updated_at     | :datetime      |       not null
+| created_at     | :datetime      | not null
+| updated_at     | :datetime      | not null
 
 ```ruby
 class Film < ApplicationRecord
@@ -59,10 +59,10 @@ end
 | Table: | planets |  |
 |:-----|:--------|------:|
 | id             | :bigint        | not null, primary key |
-| name       | :string|
-| created_at | :datetime  |        not null
-| updated_at | :datetime   |       not null
-| senator_id | :integer|
+| name           | :string        |
+| created_at     | :datetime      | not null
+| updated_at     | :datetime      | not null
+| senator_id     | :integer       |
 
 ```ruby
 class Planet < ApplicationRecord
@@ -75,9 +75,9 @@ end
 | Table: | species |  |
 |:-----|:--------|------:|
 | id             | :bigint        | not null, primary key |
-| name       | :string|
-| created_at | :datetime    |      not null
-| updated_at | :datetime    |      not null
+| name           | :string        |
+| created_at     | :datetime      | not null
+| updated_at     | :datetime      | not null
 
 ```ruby
 class Species < ApplicationRecord
