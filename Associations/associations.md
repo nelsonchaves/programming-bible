@@ -1,3 +1,9 @@
+## ATX Headings are Valid ##
+Heading One
+===========
+
+Heading Two
+---
 # Database Relationships
 - One-to-One
 - One-to-Many
@@ -11,7 +17,7 @@
 - Polymorphic
 
 # Has-One / Belong-to
-### One-to-One relationship 
+### One-to-One relationship
 ![The San Juan Mountains are beautiful!](/Images/associations_1.png)
 # One-to-Many relationship / Has-Many
 ![The San Juan Mountains are beautiful!](/Images/associations_2.png)
