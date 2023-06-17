@@ -1,4 +1,4 @@
-#Has-Many-Through
+# Has-Many-Through
 ![The San Juan Mountains are beautiful!](/Images/associations_6.png)
 
 ```ruby
