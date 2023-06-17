@@ -11,7 +11,9 @@ The emails table will use that primary key to point to a specific row in the use
 
 # One-to-One relationship
 ![The San Juan Mountains are beautiful!](/Images/associations_1.png)
+
 # One-to-Many relationship
 ![The San Juan Mountains are beautiful!](/Images/associations_2.png)
+
 # Many-to-Many relationship
 ![The San Juan Mountains are beautiful!](/Images/associations_3.png)
