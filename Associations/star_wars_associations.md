@@ -7,18 +7,13 @@ rails migration - add_column :people, :home_planet_id, :integer, to_table: { for
 ```
 | Left |  Center  | Right |
 |:-----|:--------:|------:|
-| id   | :bigint  | not null, primary key |
-| name   |  :string  |   |
-| species_id   | :bigint |    not null |
-# Table name: people
-#
-#  id             :bigint           not null, primary key
-#  name           :string
-#  species_id     :bigint           not null
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  home_planet_id :integer
-#
+| id             | :bigint      | not null, primary key |
+| name           | :string      | |
+| species_id     | :bigint      | not null |
+| created_at     | :datetime    | not null |
+| updated_at     | :datetime    | not null |
+| home_planet_id | :integer     | |
+
 class Person < ApplicationRecord
   belong_to :species
   # home_planet doesnt exist in a class so we pass the class_name for where home_planet is in
