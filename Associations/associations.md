@@ -1,14 +1,14 @@
 # Database Relationships
--One-to-One
--One-to-Many
--Many-to-Many
+- One-to-One
+- One-to-Many
+- Many-to-Many
 
 # Rails Associations
--Has-One/Belong-to
--Has-Many
--Has-and-Belongs-to-Many
--Has-Many-Through
--Polymorphic
+- Has-One/Belong-to
+- Has-Many
+- Has-and-Belongs-to-Many
+- Has-Many-Through
+- Polymorphic
 
 # One-to-One relationship / Has-One/Belong-to
 ![The San Juan Mountains are beautiful!](/Images/associations_1.png)
