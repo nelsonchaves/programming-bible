@@ -8,8 +8,8 @@ This is the very basic level but it's not advisable to do this when retrieving d
 This is a bad idea because the :search_term does not escape. Someone could insert malicious code as part of the search term and it could become a security risk
 
 ```ruby
-User.where("name = '#{params[:search_term]}'")
-User.where("name = 'John'")
+🚧 User.where("name = '#{params[:search_term]}'")
+🚧 User.where("name = 'John'")
 ```
 .callout_warn
 ### Search users by their names and emails (via positional handlers).
