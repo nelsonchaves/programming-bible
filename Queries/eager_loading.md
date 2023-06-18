@@ -15,9 +15,8 @@ bundle add faker
 Add 10 users:
 ```ruby
 10.times { User.create(name: Faker::Name.name, email: Faker::Internet.email) }
-```
-
 User.all.each { |u| u.foods.map(&:name)}
+```
 
 # In Rails there are 3 ways you can do this.
 - preload method
@@ -29,7 +28,7 @@ You always get 2 separate SQL queries. The first one will fetch the parent recor
 ```ruby
 User.preload(:foods)
 ```
-but because of 2 separate queries you cannot filter based on the associated records. and if you try to add a where clause you'll get an error
+But because of 2 separate queries you cannot filter based on the associated records. And if you try to add a where clause you'll get an error
 ```ruby
 User.preload(:foods).where(foods: { name: "Peppers" })
 ```
@@ -40,9 +39,14 @@ The similar method eager_load that allows you to add the where clause because th
 User.eager_load(:foods)
 User.eager_load(:foods).where(foods: { name: "Peppers" })
 ```
-# includes provide the best of 2 methods based on usage. by default it will use preload to fetch the data using 2 separate SQLs
-User.includes(:foods)
 
-# but if you provide a where condition it will switch to eager_load. Obviously you dont want to always eager_load your data because it will increase your memory consumption.
+# Includes
+It provides the best of the 2 methods based on usage. By default it will use preload to fetch the data using 2 separate SQLs
+```ruby
+User.includes(:foods)
+```
+
+But if you provide a where condition it will switch to _eager_load_. Obviously you don't want to always eager_load your data because it will increase your memory consumption.
+```ruby
 User.includes(:foods).where(foods: { name: "Peppers" })
 ```
