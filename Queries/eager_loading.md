@@ -15,6 +15,22 @@ bundle add faker
 Add 10 users:
 ```ruby
 10.times { User.create(name: Faker::Name.name, email: Faker::Internet.email) }
+```
+
+Add the association:
+```ruby
+class User < ApplicationRecord
+  has_many :foods
+end
+```
+
+Add 3 food records for each user:
+```ruby
+User.all.each { |u| 3.times { Food.create(name: Faker::Food.vegetables, user: u) } }
+```
+
+Fetching data:
+```ruby
 User.all.each { |u| u.foods.map(&:name)}
 ```
 
