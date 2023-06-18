@@ -1,0 +1,8 @@
+
+```html
+<div id="users">
+  <% @users.each do |user| %>
+    <%= render user %>
+  <% end %>
+</div>  
+```
