@@ -20,7 +20,7 @@ render partial:  "partial_name", locals: { variable_name: value }
 <% render "layouts/footer", date: Date.new.to_formatted_s(:long) %>
 ```
 
-### passing an obejct and
+### object and _as_ keys
 Inside the **_user_** partial. the local variable **_user_** will have the value of whatever the object key contains. And if you don't want the local variable to be named **_user_**. You can see the **_as:_** key to give it a different name.
 
 ```ruby
