@@ -1,14 +1,17 @@
 # Clean Up Name
 ```ruby
-user = User.new(name: "      John      ")
+class User < ApplicationRecord
+  before_validation :cleanup
 
-before_validation :cleanup
+  private
 
-private
-
-def cleanup
-  name.strip!
+    def cleanup
+      name.strip!
+    end
 end
-
+```
+```ruby
+user = User.new(name: "      John      ")
 user.name
 => "John"
+```
