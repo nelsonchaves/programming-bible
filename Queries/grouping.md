@@ -17,7 +17,12 @@ end
 Finding how many users are in each country.
 ```ruby
 User.all.group(:country).count
-=> "Sweden"=>4
+{
+  "Sweden"=>4,
+  "Canada"=>2,
+  "Russia"=>1,
+  "England"=>3
+}
 ```
 
 Adding another column so we can group by both.
@@ -30,5 +35,10 @@ rails db:migrate
 Group by both columns:
 ```ruby
 User.all.group(:country, :happy).count
-=> ["Sweden", true]=>2
+{
+  ["Sweden", true]=>4,
+  ["Canada", true]=>2,
+  ["Russia", false]=>1,
+  ["England", true]=>3
+}
 ```
