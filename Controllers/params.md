@@ -45,7 +45,7 @@ get '/users/:id/edit', to: 'users#edit'
 # Strong params
 Rails provides a feature called strong params, which is used to prevent security issues when passing a params hash to a Model
 
-Routes:
+#### Routes:
 ```ruby
 Rails.application.routes.draw do
   resources :users, only: %i[create new show edit]
@@ -53,6 +53,14 @@ Rails.application.routes.draw do
   root "site#index"
 end
 ```
+#### Controller:
+```ruby
+def new
+  @user = User.new
+end
+```
+#### Form:
+```ruby
 <h1>New user</h1>
 
 <%= form_with model: @user do |form| %>
@@ -68,7 +76,9 @@ end
     <%= form.submit :save %>
   </div>
 <% end %>
-
+```
+#### Terminal:
+```ruby
 Started POST "/users" for ::1 at 2023-06-20 13:00:37 -0700
 Processing by UsersController#create as TURBO_STREAM
   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"John", "age"=>"25"}, "commit"=>"save"}
@@ -77,6 +87,7 @@ Processing by UsersController#create as TURBO_STREAM
   Rendered users/create.html.erb within layouts/application (Duration: 0.8ms | Allocations: 146)
   Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2488)
 Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3264)
+```
 ### Permit
 
 
