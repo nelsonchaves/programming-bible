@@ -113,7 +113,6 @@ To permit all the attributes use a bang method at the end "_**!**_". You should 
 There's another method available in the ActionController object called _**require**_. And this one is very useful because it lets you raise a helpful exception when parameters are missing.
 
 ```zsh
-x
 >> params.require(:user)
 => #<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: false>
 
