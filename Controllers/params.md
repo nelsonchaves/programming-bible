@@ -110,4 +110,17 @@ To permit all the attributes use a bang method at the end "_**!**_". You should 
 => #<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: true>
 ```
 ### Require
-There's another method available in the ActionController object called _**require**_. And this one is very useful because it lets you raise a helpful exception
+There's another method available in the ActionController object called _**require**_. And this one is very useful because it lets you raise a helpful exception when parameters are missing.
+
+```zsh
+x
+>> params.require(:user)
+=> #<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: false>
+
+>> params.require(:foo)
+ActionController::ParameterMissing: param is missing or the value is empty: foo
+	from /Users/nelsonchaves/Sites/tutorials/mix-go/prorb_controllers/app/controllers/users_controller.rb:11:in `create'
+
+>> params.require(:user).permit(:name, :age)
+=> #<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: true>
+```
