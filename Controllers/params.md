@@ -112,7 +112,7 @@ class UsersController < ApplicationController
   end
 
   private
-  
+
     def user_params
       params.require(:user).permit(:name, :age)
     end
@@ -130,7 +130,7 @@ To permit all the attributes use a bang method at the end "_**!**_". You should 
 => #<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: true>
 ```
 ### Require
-There's another method available in the ActionController object called _**require**_. And this one is very useful because it lets you raise a helpful exception when parameters are missing.
+There's another method available in the ActionController::Parameters object called _**require**_. And this one is very useful because it lets you raise a helpful exception when parameters are missing.
 
 ```zsh
 >> params.require(:user)
