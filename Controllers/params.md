@@ -123,3 +123,23 @@ ActionController::ParameterMissing: param is missing or the value is empty: foo
 >> params.require(:user).permit(:name, :age)
 => #<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: true>
 ```
+# Strong Params
+```ruby
+class UsersController < ApplicationController
+  before_action :find_user, only: %i[show edit]
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    User.create(user_params)
+  end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :age)
+    end
+end
+```
