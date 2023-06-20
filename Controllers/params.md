@@ -31,7 +31,7 @@ You can nest an array inside of a hash like this
 { "user"=> { "name"=>"John", "colors"=>["red", "blue"] }}
 ```
 # Routing Parameters
-Another way of receiving params is via the routing parameters which are any params you have defined in your routes. You  can use a _**:**_ symbol in your routes.rb file to define routing parameters. So if you add a _**:name**_ parameter to the /my-page route, whatever comes after the /my-page path becomes a value for the name key in the params hash.
+Another way of receiving params is via the routing parameters which are any params you have defined in your routes.rb, You  can use a _**:**_ symbol in your routes.rb file to define routing parameters. So if you add a _**:name**_ parameter to the /my-page route, whatever comes after the /my-page path becomes a value for the name key in the params hash.
 ```ruby
 get '/my-page/:name', to: 'site#index'
 /my-page/John
