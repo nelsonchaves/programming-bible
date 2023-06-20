@@ -42,8 +42,8 @@ get '/users/:id/edit', to: 'users#edit'
 /users/1/edit
 { "id"=>"1" }
 ```
-# Strong params
-Rails provides a feature called strong params, which is used to prevent security issues when passing a params hash to a Model
+# Basic params
+Here's an example of basic params.
 
 #### Routes:
 ```ruby
@@ -98,6 +98,26 @@ In the browser console. If we simply print the params you will see it's not a re
 "user"=>#<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: false>, "commit"=>"save",
 "controller"=>"users", "action"=>"create"} permitted: false>
 ```
+
+# Strong Params
+Rails provides a feature called strong params, which is used to prevent security issues when passing a params hash to a Model
+```ruby
+class UsersController < ApplicationController
+  def new
+    @user = User.new
+  end
+
+  def create
+    User.create(user_params)
+  end
+
+  private
+  
+    def user_params
+      params.require(:user).permit(:name, :age)
+    end
+end
+```
 ### Permit
 We need to specify the attributes. When you call permit you can now see the flag is set to true. It allows you to initialize or create the user object via mass assignment.
 ```zsh
@@ -122,24 +142,4 @@ ActionController::ParameterMissing: param is missing or the value is empty: foo
 
 >> params.require(:user).permit(:name, :age)
 => #<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: true>
-```
-# Strong Params
-```ruby
-class UsersController < ApplicationController
-  before_action :find_user, only: %i[show edit]
-
-  def new
-    @user = User.new
-  end
-
-  def create
-    User.create(user_params)
-  end
-
-  private
-
-    def user_params
-      params.require(:user).permit(:name, :age)
-    end
-end
 ```
