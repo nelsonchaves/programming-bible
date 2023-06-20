@@ -1,5 +1,12 @@
 # Forms
 
+# form_with
+- In earlier versions of rails it's functionaly was split into 2 different helpers named: form_tag and form_for.
+- Inside the form_with block you have access to a form object which provides various helper methods for generating form elements like inputs, checkboxes, buttons and everything you can add inside of a form.
+
+
+
+
 - What is the difference between form_for and form_tag?
 ```ruby
 - form_tag and form_for both are used to submit the form and it’s elements.
@@ -15,7 +22,7 @@
 - It just creates a form tag and it is best used for non-model forms.
 
 Example:
-```ruby
+```html
 <% form_tag ‘/articles’ do -%>
 <%= text_field_tag “article”, “firstname” %>
 <% end -%>
