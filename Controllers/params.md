@@ -36,3 +36,4 @@ Another way of receiving params is via the routing parameters which are any para
 get '/my-page/:name', to: 'site#index'
 /my-page/John
 { "name"=>"John" }
+```
