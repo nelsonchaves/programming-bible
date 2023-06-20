@@ -20,20 +20,20 @@
 - form_tag also performs the "standard http post" without any model backed and has normal fields. This is mainly used when specific data need to be submitted via form.
 - It just creates a form tag and it is best used for non-model forms.
 
-## Form Examples
-Generates a form for a nested resource
+# Form Examples
+generates a form for a _nested_ resource
 ```ruby
 <% form_tag ‘/articles’ do -%>
 <%= text_field_tag “article”, “firstname” %>
 <% end -%>
 ```
 
-generates a form for a nested resource
+generates a form for a _nested_ resource
 ```ruby
 <%= form_for([@event, @registration]) do |f| %>
 ```
 
-generates a form for a single resource
+generates a form for a _single_ resource
 ```ruby
 <%= form_for(@event) do |f| %>
 ```
