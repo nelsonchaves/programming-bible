@@ -7,7 +7,7 @@
 
 
 
-### What is the difference between form_for and form_tag?
+# What is the difference between form_for and form_tag?
 - form_tag and form_for both are used to submit the form and it’s elements.
 - The main difference between these two is the way of managing objects related to that particular model is different.
 
@@ -20,15 +20,13 @@
 - form_tag also performs the "standard http post" without any model backed and has normal fields. This is mainly used when specific data need to be submitted via form.
 - It just creates a form tag and it is best used for non-model forms.
 
-Example:
-```html
+## Form Examples
+Generates a form for a nested resource
+```ruby
 <% form_tag ‘/articles’ do -%>
 <%= text_field_tag “article”, “firstname” %>
 <% end -%>
-generates a form for a nested resource
 ```
-
-# Form Examples
 
 generates a form for a nested resource
 ```ruby
