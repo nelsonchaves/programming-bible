@@ -4,7 +4,7 @@ Parameters are used to send data into your controllers via _forms_ or the _url_.
 
 # URL Structure:
 https://school.mixandgo.com/dashboard?foo=bar
-![URL Structure](/Images/controllers_2.png)
+![URL Structure](/Images/controllers_3.png)
 
 Those _Query params_ at the end will be available in the params hash as a key value pair:
 ```ruby
