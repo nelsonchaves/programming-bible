@@ -78,7 +78,7 @@ end
 <% end %>
 ```
 #### Terminal:
-```ruby
+```zsh
 Started POST "/users" for ::1 at 2023-06-20 13:00:37 -0700
 Processing by UsersController#create as TURBO_STREAM
   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"John", "age"=>"25"}, "commit"=>"save"}
@@ -90,7 +90,7 @@ Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3264)
 ```
 # Params hash
 In the browser console. If we simply print the params you will see it's not a regular hash, it's an object of type **ActionController::Parameters** that behaves like a hash but it also contains the _permitted_ attribute which is set to _false._ And that's how Rails knows to reject our parameters for mass assignment. We can turn that flag on by using the _**permit**_ method which is available in the params object.
-```ruby
+```zsh
 >> params
 => #<ActionController::Parameters {"authenticity_token"=>"J5Ql23REKHFSt4KHdwoZi5vT6HjMqGlSV5uqer8nlVDtoqfVdJ_ls8A3m0AdYJeBNeYgI8vTbkTA6rT7uhpK0A", "user"=>#<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: false>, "commit"=>"save", "controller"=>"users", "action"=>"create"} permitted: false>
 ```
