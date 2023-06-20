@@ -2,7 +2,7 @@
 
 ### Has And Belongs To Many
 we're looking at how to associate records (from a separate model) via a form.
-##### Database:
+#### Database:
 ```ruby
 create_table "foods", force: :cascade do |t|
   t.string "name"
@@ -22,7 +22,7 @@ create_table "users", force: :cascade do |t|
   t.datetime "updated_at", null: false
 end
 ```
-##### Model:
+#### Model:
 ```ruby
 class Food < ApplicationRecord
   has_and_belongs_to_many :users
@@ -32,13 +32,13 @@ class User < ApplicationRecord
   has_and_belongs_to_many :foods
 end
 ```
-Controller:
+#### Controller:
 ```ruby
 def user_params
   params.require(:user).permit(:name, :email, food_ids: [])
 end
 ```
-Form:
+#### Form:
 ```ruby
 <h1>New user</h1>
 
@@ -64,7 +64,7 @@ Form:
   </div>
 <% end %>
 ```
-View show page:
+#### View show page:
 ```ruby
 <div><%= user.name %></div>
 <div><%= user.email %></div>
