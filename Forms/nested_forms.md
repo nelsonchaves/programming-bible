@@ -1,6 +1,6 @@
 # Nested forms
 
-# Has And Belongs To Many
+### Has And Belongs To Many
 we're looking at how to associate records (from a separate model) via a form.
 Database:
 ```ruby
