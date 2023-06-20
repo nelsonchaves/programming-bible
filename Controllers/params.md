@@ -99,6 +99,15 @@ In the browser console. If we simply print the params you will see it's not a re
 "controller"=>"users", "action"=>"create"} permitted: false>
 ```
 ### Permit
-
-
+We need to specify the attributes. When you call permit you can now see the flag is set to true. It allows you to initialize or create the user object via mass assignment.
+```zsh
+>> params[:user].permit(:name, :age)
+=> #<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: true>
+```
+To permit all the attributes use a bang method at the end "_**!**_". You should not use bang version except for when you need to debug something.
+```zsh
+>> params[:user].permit!
+=> #<ActionController::Parameters {"name"=>"John", "age"=>"25"} permitted: true>
+```
 ### Require
+There's another method available in the ActionController object called _**require**_. And this one is very useful because it lets you raise a helpful exception
