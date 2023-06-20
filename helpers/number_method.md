@@ -11,6 +11,7 @@ This helper method that takes an integer (positive and negative allowed) and ret
 number_to_currency(-1234567890.50, negative_format: "Price is invalid!")
 # => "Price is invalid!"
 ```
+Other helper methods to for numbers
 ```ruby
 number_to_currency(1234567890, delimiter: "|")
 # => "$1|234|567|890.00"
