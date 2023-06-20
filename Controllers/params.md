@@ -3,7 +3,6 @@
 Parameters are used to send data into your controllers via _forms_ or the _url_. Forms collect data from the user and send it to your controller and it becomes available inside a controller through the _params hash_. And it's not just forms, links can send params as well by pending data to the url.
 
 # URL Structure:
-https://school.mixandgo.com/dashboard?foo=bar
 ![URL Structure](/Images/controllers_3.png)
 
 Those _Query params_ at the end will be available in the params hash as a key value pair:
@@ -31,9 +30,54 @@ You can nest an array inside of a hash like this
 { "user"=> { "name"=>"John", "colors"=>["red", "blue"] }}
 ```
 # Routing Parameters
-Another way of receiving params is via the routing parameters which are any params you have defined in your routes.rb, You  can use a _**:**_ symbol in your routes.rb file to define routing parameters. So if you add a _**:name**_ parameter to the /my-page route, whatever comes after the /my-page path becomes a value for the name key in the params hash.
+Another way of receiving params is via the routing parameters which are any params you have defined in your routes.rb, You can use a _**:**_ symbol in your routes.rb file to define routing parameters. So if you add a _**:name**_ parameter to the /my-page route, whatever comes after the /my-page path becomes a value for the name key in the params hash.
 ```ruby
 get '/my-page/:name', to: 'site#index'
 /my-page/John
 { "name"=>"John" }
 ```
+The most common use of routing params is to use ids as parameters. That's the route rails generates for you. And the id of the user becomes available for you to use inside the controller.
+```ruby
+get '/users/:id/edit', to: 'users#edit'
+/users/1/edit
+{ "id"=>"1" }
+```
+# Strong params
+Rails provides a feature called strong params, which is used to prevent security issues when passing a params hash to a Model
+
+Routes:
+```ruby
+Rails.application.routes.draw do
+  resources :users, only: %i[create new show edit]
+  get "/my-page/:name", to: "site#index"
+  root "site#index"
+end
+```
+<h1>New user</h1>
+
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :age %>
+    <%= form.text_field :age %>
+  </div>
+  <div>
+    <%= form.submit :save %>
+  </div>
+<% end %>
+
+Started POST "/users" for ::1 at 2023-06-20 13:00:37 -0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"John", "age"=>"25"}, "commit"=>"save"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/create.html.erb within layouts/application
+  Rendered users/create.html.erb within layouts/application (Duration: 0.8ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2488)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3264)
+### Permit
+
+
+### Require
