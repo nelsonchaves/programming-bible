@@ -62,4 +62,25 @@ import { Controller } from "@hotwired/stimulus"
 - At some point you'll want to read some value from the DOM.
 - That's where Targets come into play. They let you add references to the DOM elements which become properties in your stimulus controller.
 
-In our example, we're reading whatever was typed in the **```input```** field by setting a ```data-test-target="text"``` attribute on the input field, and we're defining a static array of targets in the Stimulus controller.
+In our example, we're reading whatever was typed in the **```input```** field by setting a **```data-test-target="text"```** attribute on the **```input```** field, and we're defining a static array of targets in the Stimulus controller.
+
+To turn the test field into a stimulus controller property. We need to use the **```data-test-target="text"```** attribute and the property name as its value. And test is here is the name of our stimulus controller
+```html
+<!-- app/views/site/first.html.erb -->
+<div id="someid" data-controller="test">
+  <input type="text" data-test-target="text" />
+  <button data-action="click->test#hello">Click Me!</button>
+</div>
+```
+On the stimulus side we can create a property for the Target by adding it to a list of Target definitions and stimulus will automatically create a property named **```textTarget```** which we can extract the value from and printed to the console.
+```javascript
+// app/javascript/test_controller.js
+export default class extends Controller {
+  static targets = ["text"];
+
+  hello() {
+    console.log("Button clicked!");
+    console.log("You typed: " + this.textTarget.value);
+  }
+}
+```
