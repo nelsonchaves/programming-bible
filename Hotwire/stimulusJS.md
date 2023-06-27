@@ -80,6 +80,10 @@ Not only that but stimulus will create 2 more properties namely text targets plu
 export default class extends Controller {
   static targets = ["text"];
 
+  connect() {
+    console.log("Connected! YAY!");
+  }
+
   hello() {
     console.log("Button clicked!");
     console.log("You typed: " + this.textTarget.value);
@@ -91,6 +95,10 @@ Stimulus also creates connect and disconnect callbacks for each one of your targ
 // app/javascript/test_controller.js
 export default class extends Controller {
   static targets = ["text"];
+
+  connect() {
+    console.log("Connected! YAY!");
+  }
 
   hello() {
     console.log("Button clicked!");
@@ -114,3 +122,44 @@ You define a **```data-<controller>-<name>-class="different class names"```** at
 Stimulus provides a way to do the same for CSS classes. You define a list of classes just like you define a list of targets and you get access to the same 3 properties named the singular version, the plural version and the boolean version.
 
 Let's define a class named **```myelement```** in our stimulus controller. This will give us access to a property named **```myelementClass```**. and Another one named **```myelementClasses```**, and another named **```hasMyelementClass```**.
+```javascript
+// app/javascript/test_controller.js
+export default class extends Controller {
+  static targets = ["text"];
+  static classes = ["myelement"];
+
+  connect() {
+    console.log("Connected! YAY!");
+    console.log(
+      "Classes: ",
+      this.myelementClass,
+      this.myelementClasses,
+      this.hasMyelementClass
+    );
+  }
+
+  hello() {
+    console.log("Button clicked!");
+    console.log("You typed: " + this.textTarget.value);
+  }
+
+  textTargetConnected() {
+    console.log("text connected...");
+  }
+
+  textTargetDisconnected() {
+    console.log("text disconnected...");
+  }
+}  
+```
+Lastly we need to add the data attribute to the HTML and the Syntax for this is **```data-<controller>-<name>-class="different class names"```** _data-<controller_name>-<the name you put in your stimulus controller>-class="the value is any number of classes you want"_ and if we put multiple classes as the values here note what the corresponding property values are. The singular version is the first class name and the plural version is a list containing all of them. The existential one will only be false if the data attribute is missing.
+```HTML
+<!-- app/views/site/first.html.erb -->
+<div id="someid" data-controller="test" data-test-myelement-class="bg-black mt-4">
+  <input type="text" data-test-target="text" />
+  <button data-action="click->test#hello">Click Me!</button>
+</div>
+```
+
+# Values
+Stimulus provides another similar mechanism named values, which
