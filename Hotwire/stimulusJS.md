@@ -73,6 +73,8 @@ To turn the test field into a stimulus controller property. We need to use the *
 </div>
 ```
 On the stimulus side we can create a property for the Target by adding it to a list of Target definitions and stimulus will automatically create a property named **```textTarget```** which we can extract the value from and printed to the console.
+
+Not only that but stimulus will create 2 more properties namely text targets plural and hashtag Target which return true or false depending on if the target is present or not.
 ```javascript
 // app/javascript/test_controller.js
 export default class extends Controller {
@@ -84,3 +86,23 @@ export default class extends Controller {
   }
 }
 ```
+Stimulus also creates connect and disconnect callbacks for each one of your targets. So whenever your target gets into scope or out of it, it will call callback method just like using targets to read values from DOM elements.
+```javascript
+// app/javascript/test_controller.js
+export default class extends Controller {
+  static targets = ["text"];
+
+  hello() {
+    console.log("Button clicked!");
+    console.log("You typed: " + this.textTarget.value);
+  }
+
+  textTargetConnected() {
+    console.log("text connected...");
+  }
+
+  textTargetDisconnected() {
+    console.log("text disconnected...");
+  }
+```
+Stimulus provides a way to do the same for CSS classes
