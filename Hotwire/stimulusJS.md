@@ -13,17 +13,15 @@ import { Controller } from "@hotwired/stimulus"
 
   // Connects to data-controller="test"
   export default class Controller {
-    connect()
+    connect() {
+      console.log("Connected! YAY!");
+    }
   }
-  static targets = ["text"];
-
-  hello() {
-    console.log("Button clicked!");
-    console.log("You typed: " + this.textTarget.value);
-  }
-}
 ```
-Inside the controller file there's some code for creating a class that inherits from the stimulus controller class and the _connect method_ that is called every time the controller is connected to a _DOM element_. You can connect the controller to an element by setting the elements data controller attribute.
+Inside the controller file there's some code for creating a class that inherits from the stimulus controller class and the _**connect method**_ that is called every time the controller is connected to a _DOM element_. You can connect the controller to an element by setting the elements data controller attribute.
 
 The _connect method_ used is a lifecycle callback method which is called every time the stimulus controller connects to a _DOM element_.
- Stimulus provides 2 more lifecyle callbacks called _**initialize**_ which is called just once the controller is initialized and _**disconnect**_ and the controller is disconnected from a _DOM element_.
+
+Stimulus provides 2 more lifecyle callbacks called _**initialize**_ which is called just once the controller is initialized and _**disconnect**_ and the controller is disconnected from a _DOM element_.
+
+But Stimulus also has actions which are basically just methods on the JavaScript object. but to stick with the rails naming conventions we'll go with actions.
