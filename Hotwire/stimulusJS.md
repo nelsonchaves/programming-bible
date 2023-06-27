@@ -104,5 +104,13 @@ export default class extends Controller {
   textTargetDisconnected() {
     console.log("text disconnected...");
   }
+}  
 ```
-Stimulus provides a way to do the same for CSS classes
+# Classes
+Classes work the same way that targets do but for CSS classes.
+
+You define a **```data-<controller>-<name>-class="different class names"```** attribute, and you can read the classes on the Stimulus side by defining a static array of classes.
+
+Stimulus provides a way to do the same for CSS classes. You define a list of classes just like you define a list of targets and you get access to the same 3 properties named the singular version, the plural version and the boolean version.
+
+Let's define a class named **```myelement```** in our stimulus controller. This will give us access to a property named **```myelementClass```**. and Another one named **```myelementClasses```**, and another named **```hasMyelementClass```**.
