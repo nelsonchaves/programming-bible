@@ -25,7 +25,7 @@ The _connect method_ used is a lifecycle callback method which is called every t
 Stimulus provides 2 more lifecyle callbacks called _**initialize**_ which is called just once the controller is initialized and _**disconnect**_ and the controller is disconnected from a _DOM element_.
 
 But Stimulus also has actions which are basically just methods on the JavaScript object. but to stick with the rails naming conventions we'll go with _actions_. An _action_ can be called by using the data action attribute
-```javascript
+```html
 <!-- app/views/site/first.html.erb -->
 <div id="someid" data-controller="test">
   <input type="text" data-test-target="text" />
