@@ -5,7 +5,7 @@
 
 To disable Turbo Drive, you can set the Turbo.session.drive attribute to false after importing Turbo from the turbo-rails library.
 ```ruby
-// app/javascript/application.js
+# app/javascript/application.js
 import { Turbo } from "@hotwired/turbo-rails"
 Turbo.session.drive = false
 ```
