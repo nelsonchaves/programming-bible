@@ -62,4 +62,4 @@ import { Controller } from "@hotwired/stimulus"
 - At some point you'll want to read some value from the DOM.
 - That's where Targets come into play. They let you add references to the DOM elements which become properties in your stimulus controller.
 
-In our example, we're reading whatever was typed in the ```input``` field by setting a data-test-target="text" attribute on the input field, and we're defining a static array of targets in the Stimulus controller.
+In our example, we're reading whatever was typed in the **```input```** field by setting a ```data-test-target="text"``` attribute on the input field, and we're defining a static array of targets in the Stimulus controller.
