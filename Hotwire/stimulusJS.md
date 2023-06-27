@@ -41,10 +41,25 @@ On the button we've set the data action to **"click->test#hello"** but what does
 - Then you use an arrow **->** to separate the event name from the controller name and action.
 - so the **test** here referes to the name of the stimulus controller and **hello** refers to the action we want to call.
 
-Let's create that action on the controller now. The name of the _action_ will be **hello** and it will print a message to the console whenever we call it. When you click the button, you will _"Button clicked!"_ in the console.
+Let's create that action on the controller now. The name of the _action_ will be **hello** and it will print a message to the console whenever we call it. When you click the button, you will see _"Button clicked!"_ in the console.
 ```javascript
 // app/javascript/test_controller.js
-hello() {
-  console.log("Button clicked!");
-}
+import { Controller } from "@hotwired/stimulus"
+
+  // Connects to data-controller="test"
+  export default class Controller {
+    connect() {
+      console.log("Connected! YAY!");
+    }
+
+    hello() {
+      console.log("Button clicked!");
+    }
+  }
 ```
+# Targets
+- Targets let you read data from different elements in the DOM.
+- At some point you'll want to read some value from the DOM.
+- That's where Targets come into play. They let you add references to the DOM elements which become properties in your stimulus controller.
+
+In our example, we're reading whatever was typed in the ```input``` field by setting a data-test-target="text" attribute on the input field, and we're defining a static array of targets in the Stimulus controller.
