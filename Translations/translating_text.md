@@ -1,5 +1,5 @@
 ```ruby
-<!-- app/views/site/index.html.erb -->
+# app/views/site/index.html.erb
 <%= translate(".heading") %>
 <%= translate(".form_footer", year: Date.current.year) %>
 ```
