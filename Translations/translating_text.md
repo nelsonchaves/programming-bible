@@ -37,5 +37,5 @@ end
 ```
 But this can also be weird for users to do. An easier way is by adding two links. 1 for English and 1 for Portuguese. When you click those links you'll get the page in the respective language because each one of them them will set the different locale parameter.
 ```ruby
-<%= link_to t(".english"), root_path(locale: :foobar) %>
+<%= link_to t(".english"), root_path(locale: :portuguese) %>
 ```
