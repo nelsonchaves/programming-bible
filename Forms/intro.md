@@ -65,3 +65,5 @@ returns a textarea tag set for accessing the specified attribute
 = f.fields_for :notes, Note.new do |notes_form|
 = notes_form.text_area :body
 ```
+
+= link_to trade.chart, url_for(trade.chart), target: "_blank"
