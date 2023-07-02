@@ -1,0 +1,46 @@
+# Heroku Cli
+To login run:
+```zsh
+heroku login
+```
+
+In file Procfile write:
+```zsh
+web: bundle exec puma -C config/puma.rb
+```
+
+heroku apps:create
+
+git push heroku master
+
+Migrate The Database
+```zsh
+heroku run rake db:migrate
+```
+To launch the app in the browser, run:
+
+heroku open
+
+The app logs are a valuable tool if the app is not performing correctly or generating errors.
+heroku logs
+
+Append -t/--tail to the command to see a full, live stream of the app’s logs:
+
+heroku logs --tail
+
+Use The Rails Console
+heroku run rails console
+
+This action permanently deletes your application
+
+heroku apps:destroy
+You can confirm that your add-on and app are gone with these commands:
+
+heroku addons --all
+heroku apps --all
+
+How to reset PG Database on Heroku?
+Step 1: heroku restart
+Step 2: heroku pg:reset DATABASE (no need to change the DATABASE)
+Step 3: heroku run rake db:migrate
+Step 4: heroku run rake db:seed (if you have seed)
