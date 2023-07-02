@@ -45,15 +45,20 @@ heroku run rails console
 ```
 
 This action permanently deletes your application
-
+```zsh
 heroku apps:destroy
-You can confirm that your add-on and app are gone with these commands:
+```
 
+You can confirm that your add-on and app are gone with these commands:
+```zsh
 heroku addons --all
 heroku apps --all
+```
 
 How to reset PG Database on Heroku?
-Step 1: heroku restart
-Step 2: heroku pg:reset DATABASE (no need to change the DATABASE)
-Step 3: heroku run rake db:migrate
-Step 4: heroku run rake db:seed (if you have seed)
+```zsh
+heroku restart
+heroku pg:reset DATABASE
+heroku run rake db:migrate
+heroku run rake db:seed
+```
