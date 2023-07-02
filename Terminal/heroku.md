@@ -62,3 +62,7 @@ heroku pg:reset DATABASE
 heroku run rake db:migrate
 heroku run rake db:seed
 ```
+One Liner:
+```zsh
+heroku restart && heroku pg:reset DATABASE --confirm APP-NAME && heroku run rake db:migrate
+```
