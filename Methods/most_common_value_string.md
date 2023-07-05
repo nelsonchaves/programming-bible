@@ -22,3 +22,11 @@ array = ["apple", "banana", "apple", "orange", "banana", "apple"]
 - else
   %p No strings found in the array.
 ```
+
+You can try this also:
+```ruby
+def most_common_value(a)
+  a.group_by(&:itself).values.max_by(&:size).first
+end
+p most_common_value(array)
+```
