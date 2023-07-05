@@ -2,7 +2,7 @@ this goes in the model
 ```ruby
 def self.most_common_string(array)
   return nil if array.empty?
-  
+
   counts = Hash.new(0)
   array.each { |item| counts[item] += 1 }
 
@@ -13,7 +13,8 @@ end
 ```
 This goes in the view
 array = ["apple", "banana", "apple", "orange", "banana", "apple"]
-```html
+
+```ruby
 - most_common = Trade.most_common_string(@trades.wins.map(&:pair))
 - if most_common
   %p
