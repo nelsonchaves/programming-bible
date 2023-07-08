@@ -1,7 +1,5 @@
 # Numbers
 
-
-
 ```ruby
 # Make sure to add this first in the console to test it out
 include ActionView::Helpers::NumberHelper
