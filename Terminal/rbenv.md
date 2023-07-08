@@ -27,6 +27,10 @@ Display path to executable
 ```zsh
 rbenv which <NAME>
 ```
+Switch Ruby versions
+```zsh
+rbenv shell 3.1.2
+```
 Re-write binstubs
 ```zsh
 rbenv rehash
