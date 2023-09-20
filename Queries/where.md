@@ -37,3 +37,8 @@ This is generating an AND query
 ```ruby
 User.where(name: "John", email: "jdoe@email.com")
 ```
+
+Comparing two fields and ensure that their data types match, you can convert the id field to a string instead. The PostgreSQL function to convert a field to a string is ::text. Please note that while this query works if id is a number and badge_id is a string, it might not always give you the result you expect if badge_id contains leading zeroes or other non-numeric characters.
+```ruby
+Student.where("badge_id != id::text")
+```
