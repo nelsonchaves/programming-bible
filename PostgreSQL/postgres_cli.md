@@ -2,12 +2,14 @@
 ```ruby
 # Start Postgres server
 psql
+psql -h localhost -U postgres
 
 # list of databases (it's a lowercase L)
 \l    
 
 # Create a database
 create database my_database;
+CREATE DATABASE align_app_development;
 
 # Delete database
 drop database my_database;
