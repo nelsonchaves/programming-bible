@@ -66,3 +66,7 @@ One Liner:
 ```zsh
 heroku restart && heroku pg:reset DATABASE --confirm APP-NAME && heroku run rake db:migrate
 ```
+Set Config Vars
+```zsh
+heroku config:set AWS_SES_SMTP_PASSWORD=sadhjk2345khj23k45g
+```
