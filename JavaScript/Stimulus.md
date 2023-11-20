@@ -1,0 +1,1 @@
+rails stimulus:manifest:update  
