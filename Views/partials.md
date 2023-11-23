@@ -51,7 +51,3 @@ Rails can automatically infer the partial name and local variable name from the 
 ```
 
 In this case, Rails will look for a `_user.html.haml` partial and pass each user in the `@users` collection to this partial as a local variable named `user`.
-
----
-
-This revised explanation includes more context around each example and clarifies the purpose and usage of each rendering method. It should be more helpful to those who are new to Rails or unfamiliar with the specific nuances of rendering partials.
