@@ -1,7 +1,3 @@
-### README for Programming Bible on GitHub
-
----
-
 # Programming Bible for Ruby on Rails
 
 Welcome to the Programming Bible for Ruby on Rails! This repository is an open-source project aimed at creating a comprehensive guide for both beginners and experienced developers in the Ruby on Rails ecosystem.
