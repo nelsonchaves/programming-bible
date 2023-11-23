@@ -27,16 +27,12 @@ cat ~/.ssh/id_<key-type-here>.pub
 
 #### Listing All SSH Keys
 
-To view all the public SSH keys you have:
-
 ```zsh
 # List all public SSH keys
 ls ~/.ssh/*.pub
 ```
 
 #### Copying SSH Key to Clipboard
-
-To copy your SSH key to the clipboard (useful for adding to remote services like GitHub):
 
 ```zsh
 # Copy the RSA SSH key to clipboard
