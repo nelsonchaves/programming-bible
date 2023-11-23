@@ -9,7 +9,6 @@ psql -h localhost -U postgres
 
 # Create a database
 create database my_database;
-CREATE DATABASE align_app_development;
 
 # Delete database
 drop database my_database;
