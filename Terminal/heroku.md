@@ -4,8 +4,6 @@ The Heroku Command Line Interface (CLI) is a powerful tool to manage Heroku apps
 
 #### Logging into Heroku
 
-First, log in to your Heroku account:
-
 ```zsh
 # Log in to Heroku
 heroku login
@@ -22,16 +20,12 @@ web: bundle exec puma -C config/puma.rb
 
 #### Creating a New App
 
-To create a new app on Heroku:
-
 ```zsh
 # Create a new Heroku app
 heroku apps:create
 ```
 
 #### Deploying to Heroku
-
-Deploy your app to Heroku using Git:
 
 ```zsh
 # Push your code to Heroku
@@ -40,16 +34,12 @@ git push heroku master
 
 #### Migrating the Database
 
-Run database migrations on Heroku:
-
 ```zsh
 # Migrate the database on Heroku
 heroku run rake db:migrate
 ```
 
 #### Launching the App
-
-To open your app in a web browser:
 
 ```zsh
 # Open your Heroku app in a browser
@@ -70,16 +60,12 @@ heroku logs --tail
 
 #### Using the Rails Console
 
-Access the Rails console on Heroku:
-
 ```zsh
 # Open Rails console for your Heroku app
 heroku run rails console
 ```
 
 #### Deleting Your App
-
-To permanently delete your app:
 
 ```zsh
 # Destroy your Heroku app
@@ -98,8 +84,6 @@ heroku apps --all
 
 #### Resetting PostgreSQL Database on Heroku
 
-To reset your PostgreSQL database:
-
 ```zsh
 # Reset and migrate the database
 heroku restart
@@ -112,8 +96,6 @@ heroku restart && heroku pg:reset DATABASE --confirm APP-NAME && heroku run rake
 ```
 
 #### Setting Configuration Variables
-
-Set environment variables (config vars) for your app:
 
 ```zsh
 # Set a config variable on Heroku
