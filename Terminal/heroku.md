@@ -1,4 +1,4 @@
-### Getting Started with Heroku CLI
+### Heroku CLI
 
 The Heroku Command Line Interface (CLI) is a powerful tool to manage Heroku apps from your terminal. Here's a simplified guide to help you get started:
 
