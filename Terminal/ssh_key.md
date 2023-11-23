@@ -4,8 +4,6 @@ Secure Shell (SSH) keys are crucial for secure communication and access to remot
 
 #### Creating a New SSH Key
 
-Generate a new SSH key, replacing "YOUR@EMAIL.com" with your email:
-
 ```zsh
 # Generate a new SSH key
 ssh-keygen -t rsa -C "YOUR@EMAIL.com"
