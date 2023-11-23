@@ -4,8 +4,6 @@ Setting up Git for use with your GitHub account involves a few key steps. Here's
 
 #### 1. Configuring Basic Git Settings
 
-Open your terminal and run the following commands to configure the basic Git settings. Replace "YOUR NAME" and "YOUR@EMAIL.com" with your actual name and email associated with your GitHub account:
-
 ```zsh
 # Set color interface for Git
 git config --global color.ui true
