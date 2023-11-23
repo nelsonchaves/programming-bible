@@ -1,3 +1,6 @@
+@candidate = Candidate.find(:all, :conditions => ["candidates.id IN ? (?)", @found])
+@found = params['candidate].map(&:to_i)
+
 # def calcTax(income)
 #   taxRate1 = 0.1
 #   taxRate2 = 0.2
