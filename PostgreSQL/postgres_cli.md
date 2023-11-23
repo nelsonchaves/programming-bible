@@ -1,51 +1,134 @@
-# Postgres CLI
+### Postgres CLI
+
+Using the Postgres Command Line Interface (CLI) is essential for managing PostgreSQL databases. Here's a simplified guide to some common commands:
+
+#### Starting the Postgres Server
+
+To start the Postgres server and connect to it:
+
 ```ruby
-# Start Postgres server
+# Start and connect to the Postgres server
 psql
+# or specify host and user
 psql -h localhost -U postgres
+```
 
-# list of databases (it's a lowercase L)
+#### Listing Databases
+
+To view all the databases:
+
+```ruby
+# List all databases
 \l    
+```
 
-# Create a database
+#### Creating a Database
+
+To create a new database:
+
+```ruby
+# Create a new database
 create database my_database;
+```
 
-# Delete database
+#### Deleting a Database
+
+To delete an existing database:
+
+```ruby
+# Delete a database
 drop database my_database;
+```
 
-# Create a user
-create role nelson_chaves;  
-Grant all privileges on my_database to nelson_chaves; # not sure about this
+#### Creating a User
 
+To create a new user (role):
 
-# use that DB (so you can run sql queries)
-\c MyApp_development;  
+```ruby
+# Create a new user
+create role nelson_chaves;
+```
 
-# List tables
+To grant privileges to a user on a database:
+
+```ruby
+# Grant privileges to a user
+grant all privileges on database my_database to nelson_chaves;
+```
+
+#### Using a Specific Database
+
+To switch to a particular database:
+
+```ruby
+# Connect to a specific database
+\c my_database;
+```
+
+#### Listing Tables
+
+To list all tables in the current database:
+
+```ruby
+# List all tables
 \d
+```
 
-# list, Describe a table
-$ \d <table-name>
+#### Describing a Table
 
-# Describe table schema
-\d+ my_table;  
+To describe a specific table:
 
-# Describe table schema, including table size on disk!
-\d+
+```ruby
+# Describe a specific table
+\d <table-name>
+```
 
-# restart the ID's (primary keys will start from 1)
+To get detailed information about a table's schema:
+
+```ruby
+# Describe table schema in detail
+\d+ my_table;
+```
+
+#### Resetting Table IDs
+
+To truncate a table (reset primary keys to start from 1):
+
+```ruby
+# Truncate a table
 truncate my_table;
+```
 
-# show current database and user
+#### Showing Current Database and User
+
+To display the current database and user:
+
+```ruby
+# Show current database and user
 \c
-#=> You are now connected to database "my_database" as user "dude".
+```
 
+#### Exiting the Postgres CLI
+
+To quit the Postgres CLI:
+
+```ruby
 # Quit psql
 \q
+```
 
-# drop a column
-$ ALTER TABLE <table-name> DROP COLUMN <column_name>;
+#### Altering Tables
 
-# drop a table
-$ DROP TABLE <table-name>;
+To drop a column from a table:
+
+```ruby
+# Drop a column from a table
+alter table <table-name> drop column <column_name>;
+```
+
+To drop a table:
+
+```ruby
+# Drop a table
+drop table <table-name>;
 ```
