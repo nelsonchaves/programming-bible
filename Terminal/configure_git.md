@@ -58,7 +58,3 @@ Hi [Your GitHub Username]! You've successfully authenticated, but GitHub does no
 ```
 
 If you see this message, you're all set! Your Git is now configured to work with your GitHub account, allowing you to push and pull to your repositories securely using SSH.
-
----
-
-Remember, these steps are crucial for a seamless and secure workflow with GitHub, ensuring that all your commits are correctly attributed to you and that your connection to GitHub is secure.
