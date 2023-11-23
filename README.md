@@ -1,4 +1,4 @@
-### Programming Bible for Ruby on Rails
+# Programming Bible for Ruby on Rails
 
 Welcome to the Programming Bible for Ruby on Rails! This is a community-powered, open-source initiative aimed to build a user-friendly guide that caters to both newbie and seasoned Ruby on Rails developers.
 
