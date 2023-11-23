@@ -17,8 +17,8 @@ Your contributions are what make this Programming Bible a valuable resource. Whe
 2. **Clone the Repository**: Clone the forked repository to your local machine.
 
    ```bash
-   git clone https://github.com/your-username/programming-bible-rails.git
-   cd programming-bible-rails
+   git clone https://github.com/your-username/programming-bible.git
+   cd programming-bible
    ```
 
 3. **Create a New Branch**: Create a new branch for your changes.
