@@ -1,30 +1,50 @@
-These commands are part of Bundler, a tool for managing Ruby gem dependencies. Here's a brief overview of what each command does:
-- This command installs all the gems specified in your `Gemfile`, adhering to the versions in `Gemfile.lock` if it exists.
-- If `Gemfile.lock` doesn't exist, Bundler resolves the dependencies from scratch and creates this file.
-```zsh
-bundle install
-```
+### Simplified Guide to Bundler Commands
 
-- Running `bundle` without any subcommands is the same as running `bundle install`.
-```zsh
-# short for `bundle install`
-bundle
-```
+Bundler is a key tool for managing Ruby gem dependencies in your projects. Here's an easy-to-understand breakdown of its main commands:
 
-- This command updates your gems to the latest versions that still match the constraints in your `Gemfile`. 
-```zsh
-bundle update
-```
+#### Installing Dependencies with `bundle install`
 
-This command will update the nokogiri and puma gems to the latest versions that are compatible with the other gems in your project as specified in your Gemfile. 
-```zsh
-bundle update nokogiri puma
-```
+- **Purpose:** Installs all the gems listed in your `Gemfile`.
+- **Version Control:** Follows the versions specified in `Gemfile.lock` if it exists.
+- **First-time Setup:** Creates `Gemfile.lock` if it's not present, ensuring consistent versions across environments.
 
-- This command lists all the gems in your project that have newer versions available (based on the constraints in your `Gemfile`).
-- It's useful for seeing which gems could be updated without actually performing the update.
-```zsh
-bundle outdated
-```
+  ```zsh
+  bundle install
+  ```
 
+#### Quick Installation with `bundle`
 
+- **Function:** A shortcut for `bundle install`.
+- **Usage:** Use when you want to install dependencies quickly without typing the full command.
+
+  ```zsh
+  # Equivalent to `bundle install`
+  bundle
+  ```
+
+#### Updating Gems with `bundle update`
+
+- **Function:** Updates your gems within the constraints set in the `Gemfile`.
+- **Whole Project Update:** Without arguments, it updates all gems to the latest possible versions allowed by the `Gemfile`.
+
+  ```zsh
+  bundle update
+  ```
+
+#### Updating Specific Gems
+
+- **Selective Update:** You can update specific gems by naming them.
+- **Example:** To update `nokogiri` and `puma` to their latest allowable versions:
+
+  ```zsh
+  bundle update nokogiri puma
+  ```
+
+#### Checking for Outdated Gems with `bundle outdated`
+
+- **Purpose:** Lists gems that have newer versions available.
+- **No Changes Made:** A safe way to check for updates without altering your project.
+
+  ```zsh
+  bundle outdated
+  ```
