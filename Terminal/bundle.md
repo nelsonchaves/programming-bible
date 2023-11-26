@@ -1,21 +1,19 @@
-### Simplified Guide to Bundler Commands
+## Bundler Commands
 
-Bundler is a key tool for managing Ruby gem dependencies in your projects. Here's an easy-to-understand breakdown of its main commands:
+Bundler is an essential tool for managing Ruby gem dependencies in your projects. Here's a clear and concise breakdown of its main commands, along with some additional useful ones:
 
 #### Installing Dependencies with `bundle install`
-
-- **Purpose:** Installs all the gems listed in your `Gemfile`.
-- **Version Control:** Follows the versions specified in `Gemfile.lock` if it exists.
-- **First-time Setup:** Creates `Gemfile.lock` if it's not present, ensuring consistent versions across environments.
+- **Purpose:** Installs all gems in your `Gemfile`.
+- **Version Control:** Adheres to versions in `Gemfile.lock`, if present.
+- **First-time Setup:** Creates `Gemfile.lock` for consistent versions.
 
   ```zsh
   bundle install
   ```
 
 #### Quick Installation with `bundle`
-
-- **Function:** A shortcut for `bundle install`.
-- **Usage:** Use when you want to install dependencies quickly without typing the full command.
+- **Function:** Shortcut for `bundle install`.
+- **Usage:** For quick installations.
 
   ```zsh
   # Equivalent to `bundle install`
@@ -23,28 +21,81 @@ Bundler is a key tool for managing Ruby gem dependencies in your projects. Here'
   ```
 
 #### Updating Gems with `bundle update`
-
-- **Function:** Updates your gems within the constraints set in the `Gemfile`.
-- **Whole Project Update:** Without arguments, it updates all gems to the latest possible versions allowed by the `Gemfile`.
+- **Function:** Updates gems as per `Gemfile` constraints.
+- **Whole Project Update:** Updates all gems without specified arguments.
 
   ```zsh
   bundle update
   ```
 
 #### Updating Specific Gems
-
-- **Selective Update:** You can update specific gems by naming them.
-- **Example:** To update `nokogiri` and `puma` to their latest allowable versions:
+- **Selective Update:** Updates named gems.
+- **Example:** Update `nokogiri` and `puma`.
 
   ```zsh
   bundle update nokogiri puma
   ```
 
 #### Checking for Outdated Gems with `bundle outdated`
-
-- **Purpose:** Lists gems that have newer versions available.
-- **No Changes Made:** A safe way to check for updates without altering your project.
+- **Purpose:** Lists gems with newer versions available.
+- **No Changes Made:** Just for checking, no updates performed.
 
   ```zsh
   bundle outdated
+  ```
+
+#### Running Commands with `bundle exec`
+- **Purpose:** Runs a command within the bundle's context.
+- **Usage:** Ensures only gems in your `Gemfile` are used.
+
+  ```zsh
+  bundle exec [command]
+  ```
+
+#### Adding a Gem with `bundle add`
+- **Purpose:** Adds and installs a gem to your `Gemfile`.
+- **Usage:** Simplifies adding new gems.
+
+  ```zsh
+  bundle add [gem-name]
+  ```
+
+#### Initializing a New Gemfile with `bundle init`
+- **Purpose:** Creates a basic `Gemfile`.
+- **Usage:** For starting new projects.
+
+  ```zsh
+  bundle init
+  ```
+
+#### Checking Dependencies with `bundle check`
+- **Purpose:** Verifies if `Gemfile` dependencies are met.
+- **Usage:** For quick dependency checks.
+
+  ```zsh
+  bundle check
+  ```
+
+#### Configuring Bundler Settings with `bundle config`
+- **Purpose:** Sets or retrieves Bundler configuration options.
+- **Usage:** Customizes Bundler behavior.
+
+  ```zsh
+  bundle config [name] [value]
+  ```
+
+#### Listing Installed Gems with `bundle list`
+- **Purpose:** Shows all gems in the bundle.
+- **Usage:** For overviewing current gem versions.
+
+  ```zsh
+  bundle list
+  ```
+
+#### Cleaning Up Unused Gems with `bundle clean`
+- **Purpose:** Removes unused gems from bundler directory.
+- **Usage:** Frees up disk space.
+
+  ```zsh
+  bundle clean --force
   ```
